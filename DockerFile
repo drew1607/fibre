@@ -5,7 +5,5 @@ ADD . /app
 
 WORKDIR /app
 
-EXPOSE 3570
-
-RUN make run
+RUN go build -o main .
 CMD ["/app/main"]
