@@ -1,11 +1,9 @@
 package main
 
 import (
-	"fmt"
 	"log"
 
 	"github.com/gofiber/fiber/v2"
-	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
@@ -25,12 +23,12 @@ type Books struct {
 }
 
 func main() {
-	DB, err = gorm.Open(postgres.Open(DNS), &gorm.Config{})
-	if err != nil {
-		fmt.Println(err.Error())
-		panic("Cannot connect to Database")
-	}
-	DB.AutoMigrate(&Books{})
+	// DB, err = gorm.Open(postgres.Open(DNS), &gorm.Config{})
+	// if err != nil {
+	// 	fmt.Println(err.Error())
+	// 	panic("Cannot connect to Database")
+	// }
+	// DB.AutoMigrate(&Books{})
 	app := fiber.New()
 
 	app.Get("/", func(c *fiber.Ctx) error {
