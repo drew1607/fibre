@@ -4,5 +4,5 @@ RUN mkdir /app
 ADD . /app
 
 WORKDIR /app
-RUN make run .
+RUN go run
 CMD ["/app/main"]
